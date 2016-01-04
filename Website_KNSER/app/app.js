@@ -38,16 +38,42 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/associate.html"
     });
 
-    $routeProvider.when("/RssEvent", {
-        controller: "rssController",
-        templateUrl: "/app/views/associate.html"
+
+    $routeProvider.when("/admin/IndexRequest", {
+        controller: "requestRealtimeController",
+        templateUrl: "/app/views/admin/IndexRequest.html"
     });
 
-    $routeProvider.when("/Member", {
-        controller: "memberController",
-        templateUrl: "/app/views/associate.html"
+    $routeProvider.when("/user/request", {
+        controller: "requestsController",
+        controller: "letterRealtimeController",
+        templateUrl: "/app/views/user/request.html"
     });
 
+    $routeProvider.when("/user/rss", {
+        controller: "rsseventController",
+        templateUrl: "/app/views/user/rss.html"
+    });
+
+    $routeProvider.when("/user/event", {
+        controller: "eventsController",
+        templateUrl: "/app/views/user/event.html"
+    });
+
+    $routeProvider.when("/user/infomation", {
+        controller: "infoController",
+        templateUrl: "/app/views/user/infomation.html"
+    });
+
+    $routeProvider.when("/user/eventdetails", {
+        controller: "eventdetailsController",
+        templateUrl: "/app/views/user/eventdetails.html"
+    });
+
+    $routeProvider.when("/user/contact", {
+        controller: "contactController",
+        templateUrl: "/app/views/user/contact.html"
+    });
 
     $routeProvider.otherwise({ redirectTo: "/home" });
 

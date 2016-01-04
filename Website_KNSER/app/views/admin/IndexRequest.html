@@ -1,0 +1,33 @@
+﻿
+<h2 class="text-info">Quản lý đơn xin phép</h2>
+<div id="index-account">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Họ và tên</th>
+                <th>Loại đơn</th>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
+                <th>Lý do</th>
+                <th>Xét duyệt</th>
+                <th ng-bind-html="myHTML"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="request in requests | reverse">
+                <td data-ng-show="false" data-ng-model="request.id"><span>{{ request.requestid }}</span></td>
+                <td><span data-ng-model="newRequest.fullname">{{ request.fullname }}</span></td>
+                <td><span data-ng-model="newRequest.letter">{{ request.letter }}</span></td>
+                <td><span data-ng-model="newRequest.startdate">{{ request.startdate }}</span></td>
+                <td><span data-ng-model="newRequest.enddate">{{ request.enddate }}</span></td>
+                <td><span data-ng-model="newRequest.reason">{{ request.reason }}</span></td>
+                <td>
+                    <span data-ng-model="newRequest.approval">{{ request.approval ? 'Đã duyệt' : 'Chưa duyệt' }}</span>
+                </td>
+                <td><button type="submit" class="btn btn-primary" data-ng-click="approval(request)" ng-disabled="request.approval">Duyệt đơn</button></td>
+                <td><button type="submit" class="btn btn-warning" data-ng-click="cancel(request)" ng-disabled="!request.approval"> Bỏ duyệt</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
